@@ -153,10 +153,10 @@ func _ready():
 	randomize()
 	ChromaAnimationAPI = $"../ChromaAnimationAPI"
 	if (ChromaAnimationAPI.IsAPIInitialized()):
-		#print("Chroma SDK Plaugin API is initialized!")
+		print("Chroma SDK Plaugin API is initialized!")
 		var result = ChromaAnimationAPI.Init();
 		if (result == 0):
-			#print("Chroma is initialized!")
+			print("Chroma is initialized!")
 			pass
 		else: print("Chroma Init Returned Error: "+str(result)+"!")
 	else: print("Chroma SDK Plugin API is not initialized!")

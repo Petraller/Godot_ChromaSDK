@@ -15,48 +15,51 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Private\GodotLibrary.cpp">
+    <ClCompile Include="ChromaSDKPluginTypes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Private\Root.cpp">
+    <ClCompile Include="VerifyLibrarySignature.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Private\NodeChromaSDK.cpp">
+    <ClCompile Include="ChromaLogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Private\ChromaAnimationAPI.cpp">
+    <ClCompile Include="ChromaAnimationAPI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Private\ChromaSDKPluginTypes.cpp">
+    <ClCompile Include="NodeChromaSDK.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Private\VerifyLibrarySignature.cpp">
+    <ClCompile Include="GodotChromaLibrary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Public\Root.h">
+    <ClInclude Include="ChromaLogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Public\NodeChromaSDK.h">
+    <ClInclude Include="ChromaSDKPluginTypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Public\ChromaAnimationAPI.h">
+    <ClInclude Include="RzChromaSDKDefines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Public\ChromaSDKPluginTypes.h">
+    <ClInclude Include="RzChromaSDKTypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Public\RzChromaSDKDefines.h">
+    <ClInclude Include="RzErrors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Public\RzChromaSDKTypes.h">
+    <ClInclude Include="VerifyLibrarySignature.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Public\RzErrors.h">
+    <ClInclude Include="ChromaAnimationAPI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Public\VerifyLibrarySignature.h">
+    <ClInclude Include="NodeChromaSDK.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GodotChromaLibrary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

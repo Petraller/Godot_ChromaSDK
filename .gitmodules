@@ -1,0 +1,3 @@
+[submodule "Godot_ChromaSDK/godot-cpp"]
+	path = Godot_ChromaSDK/godot-cpp
+	url = https://github.com/godotengine/godot-cpp
