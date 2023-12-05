@@ -37,7 +37,7 @@ The `GodotHello` project is a Godot sample app that shows the animations from th
 
 **Video:**
 
-**Godot Native Plugin - Chroma SDK**
+**[OLD VIDEO] Godot Native Plugin - Chroma SDK**
 
 <a target="_blank" href="https://www.youtube.com/watch?v=U50sp-QumDg">![video](https://img.youtube.com/vi/U50sp-QumDg/0.jpg)</a>
 
@@ -60,11 +60,9 @@ The `GodotHello` project is a Godot sample app that shows the animations from th
 
 * `CChromaEditorLibrary64.dll` - Adds `Chroma` animation support and uses the `ChromaSDK`
 
-* `chromasdk_gdnativelibrary.gdnlib` - Native Godot library for the `ChromaSDK`
-
 * `Godot_ChromaSDK.dll` - Native Godot library that makes the `ChromaAnimation` library available
 
-* `NodeChromaSDK.gdns` - Godot native script connector
+* `chromasdk.gdextension` - Godot GDExtension
 
 * `NodeSample.gd` - Sample `gdscript` that uses the `ChromaAnimation` API
 
@@ -74,7 +72,7 @@ These are the steps to build the `Godot_ChromaSDK.dll` library.
 
 * First generate the Godot include files
 
-* Reference: [GDNative C++ example](https://docs.godotengine.org/en/latest/tutorials/plugins/gdnative/gdnative-cpp-example.html)
+* Reference: [GDExtension C++ example](https://docs.godotengine.org/en/stable/tutorials/scripting/gdextension/gdextension_cpp_example.html)
 
 * Pick a starting point:
 
@@ -85,27 +83,28 @@ cd C:\Public
 * Clone the Godot project (3.0 is actually the old version so get the main version)
 
 ```
-mkdir gdnative_cpp_example
-cd gdnative_cpp_example
+mkdir gdextension_cpp_example
+cd gdextension_cpp_example
 git init
-git submodule add https://github.com/GodotNativeTools/godot-cpp
+git submodule add -b 4.1 https://github.com/godotengine/godot-cpp
 cd godot-cpp
 git submodule update --init
 cd ..
 ```
 
-* Update the submodules from the `gdnative_cpp_example` folder
+* Update the submodules from the `gdextension_cpp_example` folder
 
 ```
-git submodule update --init --recursive
+cd gdextension_cpp_example
+git submodule update --init
 ```
 
 * Download the 64-bit standard version of [Godot](https://godotengine.org/download/windows)
 
-* Build the C++ bindings from the `gdnative_cpp_example` folder
+* Build the C++ bindings from the `gdextension_cpp_example` folder
 
 ```
-"%USERPROFILE%\Downloads\Godot\Godot_v3.2.1-stable_win64.exe" --gdnative-generate-json-api api.json
+"%USERPROFILE%\Downloads\Godot\Godot_v3.2.1-stable_win64.exe" --dump-extension-api
 ```
 
 * Install [Python 2.7 or better](https://www.python.org/)
@@ -128,40 +127,40 @@ SET PATH=C:\Python27;%PATH%
 
 ## Debug Build
 
-* Generate the C++ bindings from the `gdnative_cpp_example` folder
+* Generate the C++ bindings from the `gdextension_cpp_example` folder
 
 ```
 cd godot-cpp
-"%USERPROFILE%\Downloads\Godot\scons-3.1.2\script\scons.bat" platform=windows generate_bindings=yes -j4
+"%USERPROFILE%\Downloads\Godot\scons-3.1.2\script\scons.bat" platform=windows custom_api_file=<PATH_TO_FILE> -j4
 ```
 
 * Add C++ include folders to the project
 
-**C:\Public\gdnative_cpp_example\godot-cpp\include;C:\Public\gdnative_cpp_example\godot-cpp\include\core;C:\Public\gdnative_cpp_example\godot-cpp\godot_headers;C:\Public\gdnative_cpp_example\godot-cpp\include\gen**
+**C:\Public\gdextension_cpp_example\godot-cpp\include;C:\Public\gdextension_cpp_example\godot-cpp\gen\include;C:\Public\gdextension_cpp_example\godot-cpp\gdextension**
 
 * Add the godot library to the project
 
 ```
-libgodot-cpp.windows.debug.default.lib
+libgodot-cpp.windows.template_debug.x86_64.lib
 ```
 
 ## Release Build
 
-* Generate the C++ bindings from the `gdnative_cpp_example` folder
+* Generate the C++ bindings from the `gdextension_cpp_example` folder
 
 ```
 cd godot-cpp
-"%USERPROFILE%\Downloads\Godot\scons-3.1.2\script\scons.bat" platform=windows target=release generate_bindings=yes -j4
+"%USERPROFILE%\Downloads\Godot\scons-3.1.2\script\scons.bat" platform=windows target=template_release custom_api_file=<PATH_TO_FILE> -j4
 ```
 
 * Add C++ include folders to the project
 
-**C:\Public\gdnative_cpp_example\godot-cpp\include;C:\Public\gdnative_cpp_example\godot-cpp\include\core;C:\Public\gdnative_cpp_example\godot-cpp\godot_headers;C:\Public\gdnative_cpp_example\godot-cpp\include\gen**
+**C:\Public\gdextension_cpp_example\godot-cpp\include;C:\Public\gdextension_cpp_example\godot-cpp\gen\include;C:\Public\gdextension_cpp_example\godot-cpp\gdextension**
 
 * Add the godot library to the project
 
 ```
-libgodot-cpp.windows.release.default.lib
+libgodot-cpp.windows.template_release.x86_64.lib
 ```
 
 ## All
