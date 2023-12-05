@@ -38,7 +38,7 @@ void InitializeGodotChromaLibrary(godot::ModuleInitializationLevel p_level)
 		appInfo.SupportedDevice = (0x01 | 0x02 | 0x04 | 0x08 | 0x10 | 0x20);
 		appInfo.Category = 1;
 
-		if (ChromaSDK::ChromaAnimationAPI::InitSDK(&appInfo) == 0)
+		if (ChromaSDK::ChromaAnimationAPI::InitSDK && ChromaSDK::ChromaAnimationAPI::InitSDK(&appInfo) == 0)
 		{
 			//fprintf(stderr, "Loaded Chroma SDK Plugin!\r\n");
 		}
