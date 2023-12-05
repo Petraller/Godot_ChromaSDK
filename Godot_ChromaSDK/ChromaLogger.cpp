@@ -6,7 +6,7 @@ using namespace ChromaSDK;
 
 void ChromaLogger::printf(const char* format, ...)
 {
-#if _DEBUG
+#if 1
 	va_list args;
 	va_start(args, format);
 	::vprintf(format, args);
@@ -16,7 +16,7 @@ void ChromaLogger::printf(const char* format, ...)
 
 void ChromaLogger::fprintf(FILE* stream, const char* format, ...)
 {
-#if _DEBUG
+#if 1
 	va_list args;
 	va_start(args, format);
 	::vfprintf(stream, format, args);
@@ -26,7 +26,7 @@ void ChromaLogger::fprintf(FILE* stream, const char* format, ...)
 
 void ChromaLogger::wprintf(const wchar_t* format, ...)
 {
-#if _DEBUG
+#if 1
 	va_list args;
 	va_start(args, format);
 	::vwprintf(format, args);
@@ -36,7 +36,7 @@ void ChromaLogger::wprintf(const wchar_t* format, ...)
 
 void ChromaLogger::fwprintf(FILE* stream, const wchar_t* format, ...)
 {
-#if _DEBUG
+#if 1
 	va_list args;
 	va_start(args, format);
 	::vfwprintf(stream, format, args);

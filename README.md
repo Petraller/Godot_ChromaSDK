@@ -131,7 +131,7 @@ SET PATH=C:\Python27;%PATH%
 
 ```
 cd godot-cpp
-"%USERPROFILE%\Downloads\Godot\scons-3.1.2\script\scons.bat" platform=windows custom_api_file=<PATH_TO_FILE> -j4
+"%USERPROFILE%\Downloads\Godot\scons-3.1.2\script\scons.bat" platform=windows target=template_debug custom_api_file=<PATH_TO_FILE> -j4
 ```
 
 * Add C++ include folders to the project
